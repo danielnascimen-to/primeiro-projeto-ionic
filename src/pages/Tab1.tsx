@@ -1,5 +1,6 @@
 import {
   IonContent,
+  IonAvatar,
   IonHeader,
   IonPage,
   IonTitle,
@@ -23,22 +24,27 @@ const Tab1: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
+        <IonHeader className="cabecalho" collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
+            <IonTitle size="large">Apresentacao</IonTitle>
           </IonToolbar>
+          <IonAvatar>
+            <img
+              alt="Silhouette of a person's head"
+              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+            />
+          </IonAvatar>
         </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        {/* <ExploreContainer name="Tab 1 page" /> */}
         <IonCard>
           <IonCardHeader>
-            <IonCardTitle>Título do cartão</IonCardTitle>
+            <IonCardTitle className="titulo">Título do cartão</IonCardTitle>
             <IonCardSubtitle>subtítulo do cartão</IonCardSubtitle>
           </IonCardHeader>
 
           <IonCardContent>Pequena descricao do cartão</IonCardContent>
 
-          <IonButton fill="clear">Action 1</IonButton>
-          <IonButton fill="clear">Action 2</IonButton>
+       
         </IonCard>
       </IonContent>
     </IonPage>

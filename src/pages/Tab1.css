@@ -1,0 +1,6 @@
+.cabecalho{
+    display: flex;
+}
+.titulo{
+    color: red;
+}

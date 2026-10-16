@@ -1,25 +1,69 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab2.css';
+import React from "react";
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonList,
+  IonItem,
+  IonLabel,
+} from "@ionic/react";
 
-const Tab2: React.FC = () => {
+const agendaContatos = [
+  { nome: "Ana Maria", email: "ana.maria@email.com", tel: "(21) 91234-5678" },
+  {
+    nome: "Carlos Eduardo",
+    email: "carlos.eduardo@email.com",
+    tel: "(21) 92345-6789",
+  },
+  {
+    nome: "Felipe Santana",
+    email: "felipe.santana@email.com",
+    tel: "(21) 93456-7890",
+  },
+  {
+    nome: "Mariana Ribeiro",
+    email: "mariana.ribeiro@email.com",
+    tel: "(21) 94567-8901",
+  },
+  {
+    nome: "Sabrina Xavier",
+    email: "sabrina.xavier@email.com",
+    tel: "(21) 95678-9012",
+  },
+];
+
+function Example() {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 2</IonTitle>
+          <IonTitle>Contatos</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
+        <IonHeader className="cabecalho" collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 2</IonTitle>
+            <IonTitle size="large">Contatos</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
+
+        <IonList>
+          {agendaContatos.map((contato, index) => (
+            <IonItem key={index}>
+              <IonLabel>
+                <h2>{contato.nome}</h2>
+                <p>{contato.email}</p>
+                <p>{contato.tel}</p>
+              </IonLabel>
+            </IonItem>
+          ))}
+        </IonList>
       </IonContent>
     </IonPage>
   );
-};
+}
 
-export default Tab2;
+export default Example;
